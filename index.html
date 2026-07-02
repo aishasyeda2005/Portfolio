@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mahnoor Javed — Full-Stack Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="top"></div>
+
+<!-- ============ NAV ============ -->
+<header class="site-header">
+  <nav class="nav">
+    <a href="#top" class="nav__brand">
+      <span class="nav__mark">MJ</span>
+      <span class="nav__brand-text">Mahnoor Javed</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav__toggle-input" />
+    <label for="nav-toggle" class="nav__toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </label>
+    <ul class="nav__links">
+      <li><a href="#about"><span class="idx"></span>About</a></li>
+      <li><a href="#skills"><span class="idx"></span>Skills</a></li>
+      <li><a href="#experience"><span class="idx"></span>Experience</a></li>
+      <li><a href="#projects"><span class="idx"></span>Work</a></li>
+      <li><a href="#services"><span class="idx"></span>Services</a></li>
+      <li><a href="#contact" class="nav__cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__grid" aria-hidden="true"></div>
+  <span class="corner corner--tl" aria-hidden="true"></span>
+  <span class="corner corner--tr" aria-hidden="true"></span>
+
+  <div class="hero__inner">
+    <p class="sheet-tag reveal" style="--d:0"></p>
+    <h1 class="hero__name reveal" style="--d:1">Mahnoor Javed</h1>
+    <div class="hero__rule reveal" style="--d:2" aria-hidden="true"></div>
+    <p class="hero__role reveal" style="--d:2">Full-Stack Web Developer (MERN) &amp; Co-Founder, MN Tech Academy</p>
+    <p class="hero__intro reveal" style="--d:3">
+      I build dynamic, user-friendly web apps and train new developers to do the same.
+      From pixel-perfect front-ends to working back-ends — HTML5 to MongoDB —
+      I'm driven by solving complex problems and shipping things people actually enjoy using.
+    </p>
+    <div class="hero__actions reveal" style="--d:4">
+      <a href="#contact" class="btn btn--primary">Get in touch</a>
+      <a href="#projects" class="btn btn--ghost">See my work</a>
+    </div>
+    <ul class="hero__stack reveal" style="--d:5" aria-label="Core stack">
+      <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>React</li>
+      <li>Node.js</li><li>MongoDB</li><li>Tailwind</li>
+    </ul>
+  </div>
+
+  <span class="corner corner--bl" aria-hidden="true"></span>
+  <span class="corner corner--br" aria-hidden="true"></span>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section about" id="about">
+  <div class="section__head reveal">
+    <p class="sheet-tag">— About</p>
+    <h2>The short version, and the long one</h2>
+  </div>
+  <div class="about__grid">
+    <div class="about__bio reveal">
+      <p>
+        I'm a web developer based in Karachi, building dynamic, user-friendly
+        websites and applications across the MERN stack — HTML, CSS, JavaScript,
+        React, Node.js, and MongoDB, with Firebase and Tailwind in the mix too.
+        I've taken several projects from idea to deployed product, and every one
+        of them has taught me something new about writing cleaner code and
+        designing interfaces people actually want to use.
+      </p>
+      <p>
+        Alongside development, I co-founded <strong>MN Tech Academy</strong>, where I
+        train new developers in full-stack web development — because explaining
+        a concept clearly is one of the fastest ways to really understand it yourself.
+        I'm currently open to web developer, front-end, back-end, and React roles.
+      </p>
+    </div>
+    <div class="spec-table reveal" style="--d:1">
+      <div class="spec-table__row">
+        <span class="spec-table__label">Based in</span>
+        <span class="spec-table__value">Karachi, Pakistan</span>
+      </div>
+      <div class="spec-table__row">
+        <span class="spec-table__label">Currently</span>
+        <span class="spec-table__value">Co-Founder &amp; Trainer, MN Tech Academy</span>
+      </div>
+      <div class="spec-table__row">
+        <span class="spec-table__label">Focus areas</span>
+        <span class="spec-table__value">MERN Stack, Responsive Web Design</span>
+      </div>
+      <div class="spec-table__row">
+        <span class="spec-table__label">Open to</span>
+        <span class="spec-table__value">Web, Front-End, Back-End &amp; React roles</span>
+      </div>
+      <div class="spec-table__row">
+        <span class="spec-table__label">GitHub</span>
+        <span class="spec-table__value"><a href="https://github.com/DeveloperMahnoorJaved" target="_blank" rel="noopener">DeveloperMahnoorJaved</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section skills" id="skills">
+  <div class="section__head reveal">
+    <p class="sheet-tag">— Skills</p>
+    <h2>What I bring to a project</h2>
+  </div>
+  <div class="skills__grid">
+    <div class="skill-panel reveal">
+      <h3>Technical</h3>
+      <ul class="chip-list">
+        <li><span class="chip-list__name">HTML5 &amp; CSS3</span><span class="chip-list__dots" data-level="3"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">JavaScript</span><span class="chip-list__dots" data-level="3"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">React.js &amp; Next.js</span><span class="chip-list__dots" data-level="3"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">Node.js &amp; Express.js</span><span class="chip-list__dots" data-level="2"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">MongoDB</span><span class="chip-list__dots" data-level="2"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">Tailwind CSS &amp; Bootstrap5</span><span class="chip-list__dots" data-level="3"><i></i><i></i><i></i></span></li>
+      </ul>
+    </div>
+    <div class="skill-panel reveal" style="--d:1">
+      <h3>Professional</h3>
+      <ul class="chip-list">
+        <li><span class="chip-list__name">Responsive Web Design</span><span class="chip-list__dots" data-level="3"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">Web Application Development</span><span class="chip-list__dots" data-level="3"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">E-Commerce Development</span><span class="chip-list__dots" data-level="2"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">Git, GitHub &amp; Netlify Deploys</span><span class="chip-list__dots" data-level="3"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">Firebase Hosting</span><span class="chip-list__dots" data-level="2"><i></i><i></i><i></i></span></li>
+        <li><span class="chip-list__name">Mentoring &amp; Training</span><span class="chip-list__dots" data-level="3"><i></i><i></i><i></i></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section experience" id="experience">
+  <div class="section__head reveal">
+    <p class="sheet-tag">— Experience</p>
+    <h2>Where I've worked &amp; trained</h2>
+  </div>
+  <div class="ruler">
+    <div class="ruler__item reveal" style="--d:0">
+      <div class="ruler__date">Apr 2026 — Present</div>
+      <div class="ruler__body">
+        <h3>Co-Founder &amp; Full-Stack Development Trainer</h3>
+        <p class="ruler__org">MN Tech Academy · Karachi, Sindh (Remote)</p>
+        <p>Co-founded and run a full-stack development training program,
+        teaching the MERN stack to new developers from the ground up.</p>
+      </div>
+    </div>
+    <div class="ruler__item reveal" style="--d:1">
+      <div class="ruler__date">Apr 2026 — Present</div>
+      <div class="ruler__body">
+        <h3>Full-Stack Development Trainer (Part-time)</h3>
+        <p class="ruler__org">Auj Computer Institute · Pakistan (On-site)</p>
+        <p>Teaching full-stack web development part-time alongside my work
+        at MN Tech Academy.</p>
+      </div>
+    </div>
+    <div class="ruler__item reveal" style="--d:2">
+      <div class="ruler__date">Dec 2025 — Jan 2026</div>
+      <div class="ruler__body">
+        <h3>Frontend Web Developer (Internship)</h3>
+        <p class="ruler__org">DevelopersHub Corporation · Remote</p>
+        <p>Completed a six-week front-end development internship, recognized
+        with a Certificate of Achievement for exceptional performance.</p>
+      </div>
+    </div>
+    <div class="ruler__item reveal" style="--d:3">
+      <div class="ruler__date">Nov 2025 — Dec 2025</div>
+      <div class="ruler__body">
+        <h3>Frontend Developer (Internship)</h3>
+        <p class="ruler__org">Apexcify Technologies · Remote</p>
+        <p>Built front-end features as part of a focused internship —
+        a short stint that sharpened my component-based thinking.</p>
+      </div>
+    </div>
+    <div class="ruler__item reveal" style="--d:4">
+      <div class="ruler__date">Aug 2024 — Nov 2025</div>
+      <div class="ruler__body">
+        <h3>Web Developer (Full-time)</h3>
+        <p class="ruler__org">Auj Computer Institute · Karachi Division, Sindh</p>
+        <p>Worked on web application development and content development,
+        building the hands-on experience that now shapes how I teach.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS / ACHIEVEMENTS ============ -->
+<section class="section projects" id="projects">
+  <div class="section__head reveal">
+    <p class="sheet-tag">— Work &amp; Achievements</p>
+    <h2>Notable projects &amp; recognition</h2>
+  </div>
+  <div class="projects__grid">
+    <article class="project-card reveal" style="--d:0">
+      <span class="corner corner--tl" aria-hidden="true"></span>
+      <span class="corner corner--br" aria-hidden="true"></span>
+      <span class="project-card__fig">Fig. 01</span>
+      <h3>Editable Developer Profile Card</h3>
+      <p>A live profile card builder with a real-time preview and theme
+      customizer — built in pure HTML, CSS, and JavaScript. Lets users enter
+      their details, customize colors, fonts and dark/light themes, and toggle
+      animations, all updating instantly.</p>
+    </article>
+    <article class="project-card reveal" style="--d:1">
+      <span class="corner corner--tl" aria-hidden="true"></span>
+      <span class="corner corner--br" aria-hidden="true"></span>
+      <span class="project-card__fig">Fig. 02</span>
+      <h3>GAMEX — Play. Win. Dominate.</h3>
+      <p>A sleek, modern gaming platform interface built with React.js,
+      featuring tournaments, a leaderboard, and community sections —
+      focused on interactive layouts and a smooth user experience.</p>
+    </article>
+    <article class="project-card reveal" style="--d:2">
+      <span class="corner corner--tl" aria-hidden="true"></span>
+      <span class="corner corner--br" aria-hidden="true"></span>
+      <span class="project-card__fig">Fig. 03</span>
+      <h3>Certificate of Achievement — DevelopersHub</h3>
+      <p>Awarded "Best Award" for an outstanding six-week Front-End
+      Development internship at DevelopersHub Corporation, recognized for
+      performance and contributions throughout the program.</p>
+    </article>
+    <article class="project-card reveal" style="--d:3">
+      <span class="corner corner--tl" aria-hidden="true"></span>
+      <span class="corner corner--br" aria-hidden="true"></span>
+      <span class="project-card__fig">Fig. 04</span>
+      <h3>Co-Founding MN Tech Academy</h3>
+      <p>Helped build a training academy from the ground up, now teaching
+      full-stack web development to new developers in Karachi and beyond.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section services" id="services">
+  <div class="section__head reveal">
+    <p class="sheet-tag">— Services</p>
+    <h2>How we could work together</h2>
+  </div>
+  <div class="services__grid">
+    <div class="service-panel reveal" style="--d:0">
+      <h3>Full-Stack Web Development</h3>
+      <p>End-to-end MERN stack builds — React/Next.js front-ends backed
+      by Node.js, Express, and MongoDB.</p>
+    </div>
+    <div class="service-panel reveal" style="--d:1">
+      <h3>Front-End &amp; Responsive Design</h3>
+      <p>Clean, responsive interfaces with HTML5, CSS3, Tailwind, and
+      Bootstrap5 that work on every screen size.</p>
+    </div>
+    <div class="service-panel reveal" style="--d:2">
+      <h3>E-Commerce Websites</h3>
+      <p>Custom storefronts and web applications built for real
+      transactions, deployed on Firebase or Netlify.</p>
+    </div>
+    <div class="service-panel reveal" style="--d:3">
+      <h3>1:1 Mentorship &amp; Training</h3>
+      <p>Structured full-stack training for new developers, drawn from my
+      work co-founding MN Tech Academy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section contact" id="contact">
+  <div class="section__head reveal">
+    <p class="sheet-tag">— Contact</p>
+    <h2>Let's build something together</h2>
+  </div>
+  <div class="contact__grid">
+    <div class="spec-table reveal">
+      <div class="spec-table__row">
+        <span class="spec-table__label">Email</span>
+        <span class="spec-table__value"><a href="mailto:developermahnoorjaved@gmail.com">developermahnoorjaved@gmail.com</a></span>
+      </div>
+      <div class="spec-table__row">
+        <span class="spec-table__label">Phone</span>
+        <span class="spec-table__value"><a href="tel:+9200000000">+92 000 0000000</a></span>
+      </div>
+      <div class="spec-table__row">
+        <span class="spec-table__label">Location</span>
+        <span class="spec-table__value">Karachi, Pakistan</span>
+      </div>
+      <div class="spec-table__row">
+        <span class="spec-table__label">Social</span>
+        <span class="spec-table__value contact__socials">
+          <a href="https://www.linkedin.com/in/mahnoor-javed-bb68a4321/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/DeveloperMahnoorJaved" target="_blank" rel="noopener">GitHub</a>
+        </span>
+      </div>
+    </div>
+    <form class="contact__form reveal" style="--d:1" onsubmit="return false;">
+      <label>Name<input type="text" name="name" placeholder="Your name" /></label>
+      <label>Email<input type="email" name="email" placeholder="you@email.com" /></label>
+      <label>Message<textarea name="message" rows="4" placeholder="Say hello..."></textarea></label>
+      <button type="submit" class="btn btn--primary">Send message</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER — TITLE BLOCK ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__block">
+      <span class="footer__label"></span>
+      <span class="footer__value">Mahnoor Javed</span>
+    </div>
+    <div class="footer__block">
+      <span class="footer__label"></span>
+      <span class="footer__value"></span>
+    </div>
+    <div class="footer__block">
+      <span class="footer__label"></span>
+      <span class="footer__value" id="year">2026</span>
+    </div>
+    <div class="footer__block footer__block--links">
+      <a href="https://www.linkedin.com/in/mahnoor-javed-bb68a4321/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/DeveloperMahnoorJaved" target="_blank" rel="noopener">GitHub</a>
+      <a href="#top" class="footer__top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
