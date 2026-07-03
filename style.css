@@ -2,16 +2,16 @@
    TOKENS — Blueprint / drafting-sheet theme
 =================================================================== */
 :root{
-  --paper:      #F2F5F8;   /* pale blueprint-paper background */
-  --panel:      #FFFFFF;   /* card / panel surface */
-  --ink:        #16232F;   /* near-navy text */
-  --ink-dim:    #5A6B7A;   /* muted slate text */
-  --line:       #CBD6E0;   /* grid & divider lines */
-  --line-soft:  #DDE5EC;
-  --blue:       #2B5C99;   /* primary blueprint blue */
-  --blue-deep:  #1B3A63;   /* deep blue for headings/emphasis */
-  --green:      #3C7A5C;   /* verified / accent */
-  --amber:      #C98A2E;   /* sparse highlight */
+  --paper:       #F2F5F8;   /* pale blueprint-paper background */
+  --panel:       #FFFFFF;   /* card / panel surface */
+  --ink:         #16232F;   /* near-navy text */
+  --ink-dim:     #5A6B7A;   /* muted slate text */
+  --line:        #CBD6E0;   /* grid & divider lines */
+  --line-soft:   #DDE5EC;
+  --blue:        #2B5C99;   /* primary blueprint blue */
+  --blue-deep:   #1B3A63;   /* deep blue for headings/emphasis */
+  --green:       #3C7A5C;   /* verified / accent */
+  --amber:       #C98A2E;   /* sparse highlight */
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'IBM Plex Sans', sans-serif;
@@ -90,7 +90,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 .btn--ghost:hover{ border-color:var(--blue); color:var(--blue); }
 
 /* ===================================================================
-   NAV
+   NAV (Desktop - Default)
 =================================================================== */
 .site-header{
   position:sticky; top:0; z-index:50;
@@ -130,6 +130,8 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
   padding:0.5em 1.1em; border-radius:3px;
 }
 .nav__cta:hover{ background:var(--blue); color:#fff !important; }
+
+/* Hidden on Desktop by default */
 .nav__toggle, .nav__toggle-input{ display:none; }
 
 /* ===================================================================
@@ -223,10 +225,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 }
 .chip-list li:last-child{ border-bottom:none; }
 .chip-list__name{ color:var(--ink); }
-.chip-list__dots{ display:flex; gap:4px; }
-.chip-list__dots::before, .chip-list__dots::after{ content:''; }
-.chip-list__dots{ position:relative; width:44px; height:8px; }
-.chip-list__dots{ display:grid; grid-template-columns:repeat(3,10px); gap:4px; }
+.chip-list__dots{ display:grid; grid-template-columns:repeat(3,10px); gap:4px; position:relative; width:44px; height:8px; }
 .chip-list__dots span{ display:block; }
 .chip-list__dots i{
   display:block; width:10px; height:10px; border-radius:2px;
@@ -337,7 +336,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 }
 
 /* ===================================================================
-   RESPONSIVE — MOBILE
+   RESPONSIVE — MOBILE (Sahi se band kiye gaye brackets aur fixes)
 =================================================================== */
 @media (max-width:860px){
   .hero{ padding-top:4.5rem; }
@@ -352,36 +351,49 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
   .footer__inner{ grid-template-columns:1fr 1fr; row-gap:1.2rem; }
   .footer__block--links{ grid-column:1 / -1; justify-content:flex-start; flex-wrap:wrap; }
 
-  .nav__links{
-  position:fixed;
-  top:0; right:0; bottom:0;
-  width:74%;
-  max-width:320px;
-  height:100vh;
-  z-index:100;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:flex-start;
-  gap:2rem;
-  padding:2rem;
-  background:var(--panel);
-  border-left:1px solid var(--line);
-  box-shadow:-8px 0 24px rgba(22,35,47,0.15);
-  transform:translateX(100%);
-  transition:transform 0.3s ease;
-  font-size:1.1rem;
-  overflow-y:auto;
-}
+  /* Mobile Nav Drawer Style */
+  .nav__links {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: 74%;
+    max-width: 320px;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--panel);
+    border-left: 1px solid var(--line);
+    box-shadow: -8px 0 24px rgba(22,35,47,0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    font-size: 1.1rem;
+    overflow-y: auto;
   }
-  .nav__toggle-input:checked ~ .nav__links{ transform:translateX(0); }
-  .nav__toggle{
-  display:flex; flex-direction:column; gap:5px; cursor:pointer;
-  z-index:110;
-  position:relative;
-}
-  .nav__toggle span{ width:24px; height:2px; background:var(--ink); }
 
+  /* Toggle Button visibility and design on Mobile */
+  .nav__toggle {
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px; 
+    cursor: pointer;
+    z-index: 110;
+    position: relative;
+  }
+  .nav__toggle span { 
+    width: 24px; 
+    height: 2px; 
+    background: var(--ink); 
+  }
+
+  /* Checked Trigger for opening Mobile Sidebar */
+  .nav__toggle-input:checked ~ .nav__links { 
+    transform: translateX(0); 
+  }
+}
 
 @media (max-width:480px){
   .section{ padding:3.5rem 1.2rem; }
@@ -397,7 +409,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 }
 
 /* ===================================================================
-   ANIMATION — scroll reveal (used for hero + section content alike)
+   ANIMATION — scroll reveal
 =================================================================== */
 .reveal{
   opacity:0;
