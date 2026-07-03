@@ -90,7 +90,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 .btn--ghost:hover{ border-color:var(--blue); color:var(--blue); }
 
 /* ===================================================================
-   NAV (Desktop Default Settings)
+   NAV (Desktop Default Layout)
 =================================================================== */
 .site-header{
   position:sticky; top:0; z-index:50;
@@ -104,6 +104,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
   background:rgba(242,245,248,0.98);
 }
 .nav{
+  position:relative; /* Dropdown placement alignment k liye mandatory hai */
   max-width:var(--max); margin:0 auto; padding:1rem 1.5rem;
   display:flex; align-items:center; justify-content:space-between;
 }
@@ -131,7 +132,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 }
 .nav__cta:hover{ background:var(--blue); color:#fff !important; }
 
-/* Desktop standard rules for toggle hidden */
+/* Desktop standard configuration for toggle */
 .nav__toggle, .nav__toggle-input{ display:none; }
 
 /* ===================================================================
@@ -336,7 +337,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 }
 
 /* ===================================================================
-   RESPONSIVE — MOBILE (Fully Fixed & Calibrated)
+   RESPONSIVE — MOBILE (Dropdown Box Layout Fixed)
 =================================================================== */
 @media (max-width:860px){
   .hero{ padding-top:4.5rem; }
@@ -351,27 +352,54 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
   .footer__inner{ grid-template-columns:1fr 1fr; row-gap:1.2rem; }
   .footer__block--links{ grid-column:1 / -1; justify-content:flex-start; flex-wrap:wrap; }
 
-  /* Mobile Nav Drawer Style */
+  /* FLOATING DROPDOWN FIX (Like Image 2) */
   .nav__links {
-    position: fixed;
-    top: 0; right: 0; bottom: 0;
-    width: 75%;
-    max-width: 320px;
-    height: 100vh;
+    position: absolute;
+    top: 100%;             /* Header ke bilkul neeche khulne k liye */
+    right: 1.5rem;        /* Right spacing adjust ki */
+    width: 240px;         /* Compact floating dropdown box width */
+    height: auto;         /* Full screen band, sirf content k mutabiq height lego */
     z-index: 100;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    gap: 1.8rem;
-    padding: 7rem 2.5rem 2rem; /* Barhaya taaki links close button ke piche na chupen */
+    align-items: stretch; /* Links ko fully stretch karega click zone k liye */
+    gap: 0.4rem;
+    padding: 1rem;
+    
+    /* Elegant Pop-up box style with premium rounded corners */
     background: var(--panel);
-    border-left: 1px solid var(--line);
-    box-shadow: -8px 0 24px rgba(22,35,47,0.12);
-    transform: translateX(100%);
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 1.05rem;
-    overflow-y: auto;
+    border: 1px solid var(--line);
+    border-radius: 16px;  /* Smoothly rounded corners jaisa image_084289.png me hai */
+    box-shadow: 0 10px 30px rgba(22, 35, 47, 0.12); /* Soft shadow layer */
+    
+    /* Animation hidden states */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  /* Padding and alignment inside menu list items */
+  .nav__links li { width: 100%; }
+  .nav__links li a {
+    padding: 0.6rem 0.9rem;
+    width: 100%;
+    display: flex;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: background 0.2s ease;
+  }
+  .nav__links li a:hover {
+    background: var(--paper); /* Dropdown items k hover par premium look text highlight */
+  }
+  
+  /* Contact Button style reset for menu popup box */
+  .nav__links .nav__cta {
+    border: 1px solid var(--blue);
+    justify-content: center;
+    text-align: center;
+    margin-top: 0.4rem;
   }
 
   /* Hamburger Container */
@@ -380,12 +408,12 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
     flex-direction: column; 
     gap: 6px; 
     cursor: pointer;
-    z-index: 110; /* Drawer se upar layer rakhi taake close ho sake */
+    z-index: 110;
     position: relative;
     padding: 4px;
   }
   
-  /* Individual Hamburger Lines */
+  /* Hamburger Lines Layout */
   .nav__toggle span { 
     width: 24px; 
     height: 2px; 
@@ -394,21 +422,21 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
     transform-origin: left center;
   }
 
-  /* When checkbox is clicked -> Open Drawer */
+  /* TRIGGER: Checkbox checked toggle state shows dropdown smoothly */
   .nav__toggle-input:checked ~ .nav__links { 
-    transform: translateX(0); 
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(4px); /* Halka sa elastic niche drop hoga */
   }
 
-  /* Hamburger Lines to "X" Animation Rules */
+  /* Hamburger turns into close icon animate trigger */
   .nav__toggle-input:checked ~ .nav__toggle span:nth-child(1) {
     transform: rotate(45deg) translate(2px, -1px);
     background: var(--blue);
   }
-
   .nav__toggle-input:checked ~ .nav__toggle span:nth-child(2) {
     opacity: 0;
   }
-
   .nav__toggle-input:checked ~ .nav__toggle span:nth-child(3) {
     transform: rotate(-45deg) translate(1px, 2px);
     background: var(--blue);
@@ -422,7 +450,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
   .spec-table__value{ text-align:left; }
 }
 
-/* Reduced motion support */
+/* Reduced motion preference layout rules */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *{ transition:none !important; animation:none !important; }
