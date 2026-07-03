@@ -14,8 +14,8 @@
   --amber:       #C98A2E;   /* sparse highlight */
 
   --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'IBM Plex Sans', sans-serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-body:    'IBM Plex Sans', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
 
   --max: 1180px;
   --gap: clamp(1.5rem, 3vw, 3rem);
@@ -90,7 +90,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 .btn--ghost:hover{ border-color:var(--blue); color:var(--blue); }
 
 /* ===================================================================
-   NAV (Desktop - Default)
+   NAV (Desktop Default Settings)
 =================================================================== */
 .site-header{
   position:sticky; top:0; z-index:50;
@@ -131,7 +131,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 }
 .nav__cta:hover{ background:var(--blue); color:#fff !important; }
 
-/* Hidden on Desktop by default */
+/* Desktop standard rules for toggle hidden */
 .nav__toggle, .nav__toggle-input{ display:none; }
 
 /* ===================================================================
@@ -336,7 +336,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
 }
 
 /* ===================================================================
-   RESPONSIVE — MOBILE (Sahi se band kiye gaye brackets aur fixes)
+   RESPONSIVE — MOBILE (Fully Fixed & Calibrated)
 =================================================================== */
 @media (max-width:860px){
   .hero{ padding-top:4.5rem; }
@@ -355,43 +355,63 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
   .nav__links {
     position: fixed;
     top: 0; right: 0; bottom: 0;
-    width: 74%;
+    width: 75%;
     max-width: 320px;
     height: 100vh;
     z-index: 100;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
-    gap: 2rem;
-    padding: 2rem;
+    gap: 1.8rem;
+    padding: 7rem 2.5rem 2rem; /* Barhaya taaki links close button ke piche na chupen */
     background: var(--panel);
     border-left: 1px solid var(--line);
-    box-shadow: -8px 0 24px rgba(22,35,47,0.15);
+    box-shadow: -8px 0 24px rgba(22,35,47,0.12);
     transform: translateX(100%);
-    transition: transform 0.3s ease;
-    font-size: 1.1rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.05rem;
     overflow-y: auto;
   }
 
-  /* Toggle Button visibility and design on Mobile */
+  /* Hamburger Container */
   .nav__toggle {
     display: flex; 
     flex-direction: column; 
-    gap: 5px; 
+    gap: 6px; 
     cursor: pointer;
-    z-index: 110;
+    z-index: 110; /* Drawer se upar layer rakhi taake close ho sake */
     position: relative;
+    padding: 4px;
   }
+  
+  /* Individual Hamburger Lines */
   .nav__toggle span { 
     width: 24px; 
     height: 2px; 
     background: var(--ink); 
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: left center;
   }
 
-  /* Checked Trigger for opening Mobile Sidebar */
+  /* When checkbox is clicked -> Open Drawer */
   .nav__toggle-input:checked ~ .nav__links { 
     transform: translateX(0); 
+  }
+
+  /* Hamburger Lines to "X" Animation Rules */
+  .nav__toggle-input:checked ~ .nav__toggle span:nth-child(1) {
+    transform: rotate(45deg) translate(2px, -1px);
+    background: var(--blue);
+  }
+
+  .nav__toggle-input:checked ~ .nav__toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav__toggle-input:checked ~ .nav__toggle span:nth-child(3) {
+    transform: rotate(-45deg) translate(1px, 2px);
+    background: var(--blue);
   }
 }
 
@@ -402,7 +422,7 @@ p{ margin:0 0 1em; color:var(--ink-dim); }
   .spec-table__value{ text-align:left; }
 }
 
-/* Reduced motion */
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   *{ transition:none !important; animation:none !important; }
